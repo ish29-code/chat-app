@@ -1,0 +1,8 @@
+{
+     "publicDir": "public",
+     "viewsDir": "views",
+     "routes": {
+       "/": "chat.ejs"
+     }
+   }
+   
