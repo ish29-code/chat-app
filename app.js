@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const port = 5050;
+const port = process.env.PORT || 5050;
 const Chat = require("./models/chat.js");
 const methodOverride = require("method-override");
 
