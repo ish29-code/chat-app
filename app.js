@@ -12,7 +12,7 @@ app.set("view engine","ejs");
 app.set("views",path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname,'public')));
 
-main()
+/*main()
    .then(()=>{
      console.log("connection sucessfull");
    })
@@ -20,6 +20,23 @@ main()
 
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/chatapp');
+}*/
+
+main() 
+   .then(() => { 
+      console.log("Connection successful"); 
+   }) 
+   .catch((err) => console.log("Connection failed:", err)); 
+async function main() { 
+   try { 
+      await mongoose.connect('mongodb://127.0.0.1:27017/chatapp', { 
+         useNewUrlParser: true,
+         useUnifiedTopology: true 
+      }); 
+      console.log("Connected to MongoDB"); 
+   } catch (err) { 
+      console.error("Error connecting to MongoDB:", err); 
+   } 
 }
 
 //start
